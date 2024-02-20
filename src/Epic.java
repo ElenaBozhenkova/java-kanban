@@ -18,4 +18,7 @@ public class Epic extends Task {
         this.taskStatus = taskStatus;
     }
 
+    public ArrayList<SubTask> getEpicSubTasks() {
+        return epicSubTasks;
+    }
 }
