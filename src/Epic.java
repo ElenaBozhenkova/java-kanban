@@ -42,6 +42,16 @@ public class Epic extends Task {
         }
         return true;
     }
-    
 
+    @Override
+    public String toString() {
+        return "Epic{" +
+                "id=" + id +
+                ", taskName='" + taskName + '\'' +
+                ", taskDescription='" + taskDescription + '\'' +
+                ", taskStatus=" + taskStatus +
+                ", taskType=" + taskType +
+                ", epicSubTasks=" + epicSubTasks +
+                '}';
+    }
 }
