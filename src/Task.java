@@ -58,4 +58,15 @@ public class Task {
     public void setTaskType(TaskType taskType) {
         this.taskType = taskType;
     }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", taskName='" + taskName + '\'' +
+                ", taskDescription='" + taskDescription + '\'' +
+                ", taskStatus=" + taskStatus +
+                ", taskType=" + taskType +
+                '}';
+    }
 }
