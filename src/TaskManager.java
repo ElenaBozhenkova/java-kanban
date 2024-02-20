@@ -27,4 +27,14 @@ public class TaskManager {
         subTasks.put(subTask.getId(), subTask);
         return subTask;
     }
+    public void printAllTask() {
+        if (tasks.isEmpty())
+            System.out.println("Ваш список задач пока пустой");
+
+        for (int id : tasks.keySet()) {
+            System.out.print("id=" + id + " ");
+            Task task = tasks.get(id);
+            System.out.println(task);
+        }
+    }
 }
