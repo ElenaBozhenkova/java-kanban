@@ -10,4 +10,9 @@ public class TaskManager {
         this.epics = new HashMap<>();
         this.subTasks = new HashMap<>();
     }
+    public Task addNewTask(Task task) {
+        task.setId(ID.generateId());
+        tasks.put(task.getId(),task);
+        return task;
+    }
 }
