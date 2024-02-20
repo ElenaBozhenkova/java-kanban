@@ -34,5 +34,14 @@ public class Epic extends Task {
         }
         return true;
     }
+    public boolean checkSubTasksStatusIsNEW() {
+        for (SubTask subTask : epicSubTasks) {
+            if (!subTask.getTaskStatus().equals(TaskStatus.NEW)){
+                return false;
+            }
+        }
+        return true;
+    }
+    
 
 }
