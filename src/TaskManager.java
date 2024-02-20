@@ -47,4 +47,14 @@ public class TaskManager {
             System.out.println(epic);
         }
     }
+    public void printAllSubTasks() {
+        if (subTasks.isEmpty())
+            System.out.println("Ваш список подзадач пока пустой");
+
+        for (int id : subTasks.keySet()) {
+            System.out.print("id=" + id + " ");
+            SubTask subTask = subTasks.get(id);
+            System.out.println(subTask);
+        }
+    }
 }
