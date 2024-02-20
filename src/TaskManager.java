@@ -112,5 +112,17 @@ public class TaskManager {
         }
         return null;
     }
+    public Task updateTask(Task updatedTask) {
+        Task currentTask = tasks.get(updatedTask.getId());
+
+        if (currentTask != null && tasks.containsKey(updatedTask.getId())) {
+            currentTask.setTaskName(updatedTask.getTaskName());
+            currentTask.setTaskDescription(updatedTask.getTaskDescription());
+            currentTask.setTaskStatus(updatedTask.getTaskStatus());
+            tasks.put(updatedTask.getId(),currentTask);
+            return updatedTask;
+        }
+        return null;
+    }
 
 }
