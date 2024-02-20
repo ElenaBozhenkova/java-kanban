@@ -83,4 +83,16 @@ public class TaskManager {
         }
         return null;
     }
+    public SubTask removeSubTask(int id) {
+        if (subTasks.containsKey(id)) {
+            SubTask subTask = subTasks.get(id);
+            Epic epic = epics.get(subTask.getEpicId());
+            ArrayList<SubTask> epicSubTasks = epic.getEpicSubTasks();
+            epicSubTasks.remove(subTask);
+            subTasks.remove(id);
+            return subTask;
+        }
+        return null;
+    }
+
 }
