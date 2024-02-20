@@ -100,5 +100,11 @@ public class TaskManager {
         }
         return null;
     }
+    public Task getEpic(int id) {
+        if (epics.containsKey(id)) {
+            return epics.get(id);
+        }
+        return null;
+    }
 
 }
