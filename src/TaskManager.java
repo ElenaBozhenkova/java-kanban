@@ -37,4 +37,14 @@ public class TaskManager {
             System.out.println(task);
         }
     }
+    public void printAllEpic() {
+        if (epics.isEmpty())
+            System.out.println("Ваш список эпиков пока пустой");
+
+        for (int id : epics.keySet()) {
+            System.out.print("id=" + id + " ");
+            Epic epic = epics.get(id);
+            System.out.println(epic);
+        }
+    }
 }
