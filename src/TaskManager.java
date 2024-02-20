@@ -136,5 +136,17 @@ public class TaskManager {
         }
         return null;
     }
+    public SubTask updateSubTask(SubTask updatedSubTask) {
+        SubTask currentSubTask = subTasks.get(updatedSubTask.getId());
+
+        if (currentSubTask != null && tasks.containsKey(updatedSubTask.getId())) {
+            currentSubTask.setTaskName(updatedSubTask.getTaskName());
+            currentSubTask.setTaskDescription(updatedSubTask.getTaskDescription());
+            currentSubTask.setTaskStatus(updatedSubTask.getTaskStatus());
+            tasks.put(updatedSubTask.getId(), currentSubTask);
+            return updatedSubTask;
+        }
+        return null;
+    }
 
 }
