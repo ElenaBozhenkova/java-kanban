@@ -106,5 +106,11 @@ public class TaskManager {
         }
         return null;
     }
+    public Task getSubTask(int id) {
+        if (subTasks.containsKey(id)) {
+            return subTasks.get(id);
+        }
+        return null;
+    }
 
 }
