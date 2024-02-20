@@ -15,4 +15,9 @@ public class TaskManager {
         tasks.put(task.getId(),task);
         return task;
     }
+    public Epic addNewEpic(Epic epic) {
+        epic.setId(ID.generateId());
+        epics.put(epic.getId(),epic);
+        return epic;
+    }
 }
