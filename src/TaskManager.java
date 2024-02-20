@@ -57,4 +57,9 @@ public class TaskManager {
             System.out.println(subTask);
         }
     }
+    public void removeAllTasks() {
+        tasks.clear();
+        epics.clear();
+        subTasks.clear();
+    }
 }
