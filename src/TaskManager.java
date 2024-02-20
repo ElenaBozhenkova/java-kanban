@@ -62,4 +62,12 @@ public class TaskManager {
         epics.clear();
         subTasks.clear();
     }
+    public Task removeTask(int id) {
+        if (tasks.containsKey(id)) {
+            Task task = tasks.get(id);
+            tasks.remove(id);
+            return task;
+        }
+        return null;
+    }
 }
