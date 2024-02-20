@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class TaskManager {
@@ -67,6 +68,18 @@ public class TaskManager {
             Task task = tasks.get(id);
             tasks.remove(id);
             return task;
+        }
+        return null;
+    }
+    public Epic removeEpic(int id) {
+        if (epics.containsKey(id)) {
+            Epic epic = epics.get(id);
+            ArrayList<SubTask> epicSubTasks = epic.getEpicSubTasks();
+            for (SubTask subTask : epicSubTasks) {
+                subTasks.remove(subTask);
+            }
+            epics.remove(id);
+            return epic;
         }
         return null;
     }
