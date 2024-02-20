@@ -76,7 +76,7 @@ public class TaskManager {
             Epic epic = epics.get(id);
             ArrayList<SubTask> epicSubTasks = epic.getEpicSubTasks();
             for (SubTask subTask : epicSubTasks) {
-                subTasks.remove(subTask);
+                subTasks.remove(subTask.getId());
             }
             epics.remove(id);
             return epic;
