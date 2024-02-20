@@ -148,5 +148,10 @@ public class TaskManager {
         }
         return null;
     }
+    public Task updateTaskStatus(Task task, TaskStatus newTaskStatus) {
+        Task currentTask = tasks.get(task.getId());
+        currentTask.setTaskStatus(newTaskStatus);
+        return task;
+    }
 
 }
