@@ -4,10 +4,19 @@ public class Task {
     protected String taskDescription;
     protected TaskStatus taskStatus;
     protected TaskType taskType;
+
     public Task(String taskName, String taskDescription) {
         this.taskName = taskName;
         this.taskDescription = taskDescription;
         this.taskStatus = TaskStatus.NEW;
+        this.taskType = TaskType.TASK;
+    }
+
+    public Task(Integer id, String taskName, String taskDescription, TaskStatus taskStatus) {
+        this.id = id;
+        this.taskName = taskName;
+        this.taskDescription = taskDescription;
+        this.taskStatus = taskStatus;
         this.taskType = TaskType.TASK;
     }
 
