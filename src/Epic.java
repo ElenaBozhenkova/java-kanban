@@ -26,4 +26,13 @@ public class Epic extends Task {
         epicSubTasks.add(subTask);
     }
 
+    public boolean checkSubTasksStatusIsDONE() {
+        for (SubTask subTask : epicSubTasks) {
+            if(!subTask.getTaskStatus().equals(TaskStatus.DONE)){
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
