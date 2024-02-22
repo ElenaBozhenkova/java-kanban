@@ -103,9 +103,9 @@ public class TaskManager {
         if (subTasks.containsKey(id)) {
             SubTask subTask = subTasks.get(id);
             Epic epic = epics.get(subTask.getEpicId());
-            ArrayList<SubTask> epicSubTasks = epic.getEpicSubTasks();
-            epicSubTasks.remove(subTask);
+            epic.removeEpicSubTasksItem(id);
             subTasks.remove(id);
+            updateEpicStatus(epic);
             return true;
         }
         return false;
