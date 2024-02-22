@@ -45,29 +45,33 @@ public class Epic extends Task {
         epicSubTasks.clear();
     }
 
+    public TaskStatus checkSubTasksStatus(ArrayList<SubTask> allEpicSubTasks) {//нужно объединить методы по статусам, чтобы не гонять один и тот же список дважды, а так же дополнить его логикой определения статуса IN_PROGRESS
+        boolean isNew = true;
+        boolean isDone = true;
 
-    public boolean checkSubTasksStatusIsDONE() {
-        for (SubTask subTask : epicSubTasks) {
+        for (SubTask subTask : allEpicSubTasks) {
+            if(!subTask.getTaskStatus().equals(TaskStatus.NEW)) {
+                isNew = false;
+            }
             if(!subTask.getTaskStatus().equals(TaskStatus.DONE)){
-                return false;
+                isDone = false;
             }
         }
-        return true;
-    }
-    public boolean checkSubTasksStatusIsNEW() {
-        for (SubTask subTask : epicSubTasks) {
-            if (!subTask.getTaskStatus().equals(TaskStatus.NEW)){
-                return false;
-            }
+        if (isNew) {
+            setTaskStatus(TaskStatus.NEW);
+        } else if(isDone) {
+            setTaskStatus(TaskStatus.DONE);
+        } else {
+            setTaskStatus(TaskStatus.IN_PROGRESS);
         }
-        return true;
+        return getTaskStatus();
     }
 
     @Override
     public String toString() {
         return "Epic{" +
                 "id=" + id +
-                ", taskName='" + taskName + '\'' +
+                ", Name='" + taskName + '\'' +
                 ", taskDescription='" + taskDescription + '\'' +
                 ", taskStatus=" + taskStatus +
                 ", taskType=" + taskType +
