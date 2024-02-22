@@ -21,11 +21,10 @@ public class SubTask extends Task {
     public String toString() {
         return "SubTask{" +
                 "epicId=" + epicId +
-                ", id=" + id +
-                ", taskName='" + taskName + '\'' +
-                ", taskDescription='" + taskDescription + '\'' +
-                ", taskStatus=" + taskStatus +
-                ", taskType=" + taskType +
+                ", subTaskID=" + id +
+                ", subTaskName='" + taskName + '\'' +
+                ", subTaskDescription='" + taskDescription + '\'' +
+                ", subTaskStatus=" + taskStatus +
                 '}';
     }
 }
