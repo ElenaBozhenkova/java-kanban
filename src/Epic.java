@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Epic extends Task {
     private final ArrayList<Integer> epicSubTasks;
@@ -24,6 +25,15 @@ public class Epic extends Task {
 
     public void addSubTask(SubTask subTask) {
         epicSubTasks.add(subTask.getId());
+    }
+    public Boolean removeEpicSubTasksItem(int id) {
+        for(Integer item : epicSubTasks ) {
+            if (Objects.equals(id, item)){
+                epicSubTasks.remove(item);
+                return true;
+            }
+        }
+        return false;
     }
 
 
