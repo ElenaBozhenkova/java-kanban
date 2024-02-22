@@ -79,13 +79,12 @@ public class TaskManager {
     public void removeAllSubTasks() {
         subTasks.clear();
     }
-    public Task removeTask(int id) {
+    public Boolean removeTask(int id) {
         if (tasks.containsKey(id)) {
-            Task task = tasks.get(id);
             tasks.remove(id);
-            return task;
+            return true;
         }
-        return null;
+        return false;
     }
     public Epic removeEpic(int id) {
         if (epics.containsKey(id)) {
