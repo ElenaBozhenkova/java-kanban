@@ -49,15 +49,12 @@ public class TaskManager {
         }
         return listOfAllEpics;
     }
-    public void printAllSubTasks() {
-        if (subTasks.isEmpty())
-            System.out.println("Ваш список подзадач пока пустой");
-
-        for (int id : subTasks.keySet()) {
-            System.out.print("id=" + id + " ");
-            SubTask subTask = subTasks.get(id);
-            System.out.println(subTask);
+    public ArrayList<SubTask> getAllSubTasks() {
+        ArrayList<SubTask> listOfAllSubTasks= new ArrayList<>();
+        for (SubTask subTask : subTasks.values()) {
+            listOfAllSubTasks.add(subTask);
         }
+        return listOfAllSubTasks;
     }
     public void removeAllTasks() {
         tasks.clear();
