@@ -126,15 +126,15 @@ public class TaskManager {
         }
         return null;
     }
-    public Epic updateEpic(Epic updatedEpic) {
+    public Boolean updateEpic(Epic updatedEpic) {
         Epic currentEpic = epics.get(updatedEpic.getId());
 
         if (epics.containsKey(updatedEpic.getId())) {
             currentEpic.setTaskName(updatedEpic.getTaskName());
             currentEpic.setTaskDescription(updatedEpic.getTaskDescription());
-            return updatedEpic;
+            return true;
         }
-        return null;
+        return false;
     }
     public SubTask updateSubTask(SubTask updatedSubTask) {
         SubTask currentSubTask = subTasks.get(updatedSubTask.getId());
