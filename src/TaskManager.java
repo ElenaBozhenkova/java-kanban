@@ -26,11 +26,14 @@ public class TaskManager {
         return epic;
     }
     public SubTask addNewSubTask(SubTask subTask) {
-        subTask.setId(ID.generateId());
-        subTask.setEpicId(epic.getId());
-        epic.addSubTask(subTask);
-        subTasks.put(subTask.getId(), subTask);
-        return subTask;
+        if (epics.containsKey(subTask.getEpicId())) {
+            subTasks.put(subTask.getId(), subTask);
+            Epic epic = epics.get(subTask.getEpicId());
+            epic.addSubTask(subTask);
+            updateEpicStatus(epic);
+            return subTask;
+        }
+        return null;
     }
     public void printAllTask() {
         if (tasks.isEmpty())
