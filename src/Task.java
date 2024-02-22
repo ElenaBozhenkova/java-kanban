@@ -7,6 +7,10 @@ public class Task {
     protected TaskStatus taskStatus;
     protected TaskType taskType;
 
+    public Task(String taskName, String taskDescription) {//только Эпики при создании должны быть NEW, а по задачам другого типа должна быть возможность создавать в любом статусе
+        this.taskName = taskName;
+        this.taskDescription = taskDescription;
+    }
     public Task(String taskName, String taskDescription) {
         this.taskName = taskName;
         this.taskDescription = taskDescription;
