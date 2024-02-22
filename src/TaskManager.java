@@ -154,22 +154,9 @@ public class TaskManager {
         currentTask.setTaskStatus(newTaskStatus);
         return task;
     }
-    public Task updateSubTaskStatus(SubTask subtask, TaskStatus newTaskStatus) {
-        SubTask currentSubTask = subTasks.get(subtask.getId());
-        Epic epic = epics.get(currentSubTask.getEpicId());
-        ArrayList<SubTask> epicSubTasks = epic.getEpicSubTasks();
-        currentSubTask.setTaskStatus(newTaskStatus);
-
-        if ( epicSubTasks.isEmpty() || epic.checkSubTasksStatusIsNEW()) {
-            epic.setTaskStatus(TaskStatus.NEW);
-
-        } else if (epic.checkSubTasksStatusIsDONE()) {
-            epic.setTaskStatus(TaskStatus.DONE);
-
-        } else {
-            epic.setTaskStatus(TaskStatus.IN_PROGRESS);
-        }
-        return subtask;
+    public void updateEpicStatus(Epic epic) {
+        ArrayList<SubTask> allEpicSubTasks = getAllEpicSubTasks(epic);
+        epic.checkSubTasksStatus(allEpicSubTasks);
     }
 
 }
