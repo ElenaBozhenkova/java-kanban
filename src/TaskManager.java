@@ -56,6 +56,14 @@ public class TaskManager {
         }
         return listOfAllSubTasks;
     }
+    public ArrayList<SubTask> getAllEpicSubTasks(Epic epic) {
+        ArrayList<Integer> epicSubTasksId = epic.getEpicSubTasks();
+        ArrayList<SubTask> epicSubTasks = new ArrayList<>();
+        for (Integer subTaskId : epicSubTasksId) {
+            epicSubTasks.add(subTasks.get(subTaskId));
+        }
+        return epicSubTasks;
+    }
     public void removeAllTasks() {
         tasks.clear();
         epics.clear();
