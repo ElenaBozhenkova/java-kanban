@@ -137,14 +137,15 @@ public class TaskManager {
         return false;
     }
     public Boolean updateSubTask(SubTask updatedSubTask) {
-        SubTask currentSubTask = subTasks.get(updatedSubTask.getId());
 
-        if (currentSubTask != null && tasks.containsKey(updatedSubTask.getId())) {
-            currentSubTask.setTaskName(updatedSubTask.getTaskName());
-            currentSubTask.setTaskDescription(updatedSubTask.getTaskDescription());
-            currentSubTask.setTaskStatus(updatedSubTask.getTaskStatus());
-            tasks.put(updatedSubTask.getId(), currentSubTask);
-            return true;
+        if (subTasks.containsKey(updatedSubTask.getId())) {
+            SubTask currentSubTask = subTasks.get(updatedSubTask.getId());
+            if(currentSubTask.getEpicId() == updatedSubTask.getEpicId()) {
+                subTasks.put(updatedSubTask.getId(), updatedSubTask);
+                Epic epic = epics.get(updatedSubTask.getEpicId());
+                updateEpicStatus(epic);
+                return true;
+            }
         }
         return false;
     }
