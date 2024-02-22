@@ -129,11 +129,9 @@ public class TaskManager {
     public Epic updateEpic(Epic updatedEpic) {
         Epic currentEpic = epics.get(updatedEpic.getId());
 
-        if (currentEpic != null && tasks.containsKey(updatedEpic.getId())) {
+        if (epics.containsKey(updatedEpic.getId())) {
             currentEpic.setTaskName(updatedEpic.getTaskName());
             currentEpic.setTaskDescription(updatedEpic.getTaskDescription());
-            currentEpic.setTaskStatus(updatedEpic.getTaskStatus());
-            epics.put(updatedEpic.getId(), currentEpic);
             return updatedEpic;
         }
         return null;
