@@ -86,17 +86,18 @@ public class TaskManager {
         }
         return false;
     }
-    public Epic removeEpic(int id) {
+    public Boolean removeEpic(int id) {
         if (epics.containsKey(id)) {
             Epic epic = epics.get(id);
-            ArrayList<SubTask> epicSubTasks = epic.getEpicSubTasks();
-            for (SubTask subTask : epicSubTasks) {
-                subTasks.remove(subTask.getId());
+            ArrayList<Integer> epicSubTasks = epic.getEpicSubTasks();
+            for (Integer subTaskId : epicSubTasks) {
+                subTasks.remove(subTaskId);
             }
+            epic.removeEpicSubTasks();
             epics.remove(id);
-            return epic;
+            return true;
         }
-        return null;
+        return false;
     }
     public SubTask removeSubTask(int id) {
         if (subTasks.containsKey(id)) {
