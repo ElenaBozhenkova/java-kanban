@@ -21,7 +21,7 @@ public class TaskManager {
         return task;
     }
     public Epic addNewEpic(Epic epic) {
-        epic.setId(ID.generateId());
+        epic.setId(generateId());
         epics.put(epic.getId(),epic);
         return epic;
     }
