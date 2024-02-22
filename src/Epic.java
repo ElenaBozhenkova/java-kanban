@@ -71,11 +71,10 @@ public class Epic extends Task {
     public String toString() {
         return "Epic{" +
                 "id=" + id +
-                ", Name='" + taskName + '\'' +
-                ", taskDescription='" + taskDescription + '\'' +
-                ", taskStatus=" + taskStatus +
-                ", taskType=" + taskType +
-                ", epicSubTasks=" + epicSubTasks +
+                ", epicName='" + taskName + '\'' +
+                ", epicDescription='" + taskDescription + '\'' +
+                ", epicStatus=" + taskStatus +
+                ", epicSubTasks=" + epicSubTasks.size() +
                 '}';
     }
 }
