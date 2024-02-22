@@ -35,15 +35,12 @@ public class TaskManager {
         }
         return null;
     }
-    public void printAllTask() {
-        if (tasks.isEmpty())
-            System.out.println("Ваш список задач пока пустой");
-
-        for (int id : tasks.keySet()) {
-            System.out.print("id=" + id + " ");
-            Task task = tasks.get(id);
-            System.out.println(task);
+    public ArrayList<Task> getAllTask() {
+        ArrayList<Task> listOfAllTasks= new ArrayList<>();
+        for (Task task : tasks.values()) {//???????можно ли здесь воспользоваться listOfAllTasks.addAll(tasks.values());
+            listOfAllTasks.add(task);
         }
+        return listOfAllTasks;
     }
     public void printAllEpic() {
         if (epics.isEmpty())
