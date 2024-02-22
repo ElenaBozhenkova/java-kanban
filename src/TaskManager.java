@@ -119,12 +119,12 @@ public class TaskManager {
     public Task getSubTask(int id) {
         return subTasks.get(id);
     }
-    public Task updateTask(Task updatedTask) {
+    public Boolean updateTask(Task updatedTask) {
         if (tasks.containsKey(updatedTask.getId())) {
             tasks.put(updatedTask.getId(),updatedTask);
-            return updatedTask;
+            return true;
         }
-        return null;
+        return false;
     }
     public Boolean updateEpic(Epic updatedEpic) {
         Epic currentEpic = epics.get(updatedEpic.getId());
