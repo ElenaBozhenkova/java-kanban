@@ -31,12 +31,11 @@ public class Main {
         Task task3 = new Task(task2.getId(),"Задача3","Описание3",TaskStatus.DONE);
         taskManager.updateTask(task3);
 
-        SubTask subTask4 = new SubTask(subTask3.getId(), "Подзадача4","Описание Подзадачи4", TaskStatus.IN_PROGRESS,epic2);
+        SubTask subTask4 = new SubTask(subTask3.getId(), "Подзадача4","Описание Подзадачи4", TaskStatus.DONE,epic2);
         taskManager.updateSubTask(subTask4);
 
         System.out.println(taskManager.getAllTask());
         System.out.println(taskManager.getAllEpic());
-        System.out.println(taskManager.getAllSubTasks());
         System.out.println(taskManager.getAllEpicSubTasks(epic2));
         System.out.println();
 
@@ -47,6 +46,7 @@ public class Main {
         System.out.println(taskManager.getAllTask());
         System.out.println(taskManager.getAllEpic());
         System.out.println(taskManager.getAllSubTasks());
+        System.out.println(taskManager.getAllEpicSubTasks(epic1));
         System.out.println(taskManager.getAllEpicSubTasks(epic2));
         System.out.println();
     }
