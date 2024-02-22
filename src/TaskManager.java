@@ -64,9 +64,19 @@ public class TaskManager {
         }
         return epicSubTasks;
     }
-    public void removeAllTasks() {
+    public void removeAll() {
         tasks.clear();
         epics.clear();
+        subTasks.clear();
+    }
+    public void removeAllTasks() {
+        tasks.clear();
+    }
+    public void removeAllEpics() {
+        epics.clear();
+        subTasks.clear();
+    }
+    public void removeAllSubTasks() {
         subTasks.clear();
     }
     public Task removeTask(int id) {
