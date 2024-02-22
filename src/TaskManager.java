@@ -27,6 +27,7 @@ public class TaskManager {
     }
     public SubTask addNewSubTask(SubTask subTask) {
         if (epics.containsKey(subTask.getEpicId())) {
+            subTask.setId(generateId());
             subTasks.put(subTask.getId(), subTask);
             Epic epic = epics.get(subTask.getEpicId());
             epic.addSubTask(subTask);
