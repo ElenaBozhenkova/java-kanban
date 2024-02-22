@@ -136,7 +136,7 @@ public class TaskManager {
         }
         return false;
     }
-    public SubTask updateSubTask(SubTask updatedSubTask) {
+    public Boolean updateSubTask(SubTask updatedSubTask) {
         SubTask currentSubTask = subTasks.get(updatedSubTask.getId());
 
         if (currentSubTask != null && tasks.containsKey(updatedSubTask.getId())) {
@@ -144,9 +144,9 @@ public class TaskManager {
             currentSubTask.setTaskDescription(updatedSubTask.getTaskDescription());
             currentSubTask.setTaskStatus(updatedSubTask.getTaskStatus());
             tasks.put(updatedSubTask.getId(), currentSubTask);
-            return updatedSubTask;
+            return true;
         }
-        return null;
+        return false;
     }
     public Task updateTaskStatus(Task task, TaskStatus newTaskStatus) {
         Task currentTask = tasks.get(task.getId());
