@@ -149,11 +149,6 @@ public class TaskManager {
         }
         return false;
     }
-    public Task updateTaskStatus(Task task, TaskStatus newTaskStatus) {
-        Task currentTask = tasks.get(task.getId());
-        currentTask.setTaskStatus(newTaskStatus);
-        return task;
-    }
     public void updateEpicStatus(Epic epic) {
         ArrayList<SubTask> allEpicSubTasks = getAllEpicSubTasks(epic);
         epic.checkSubTasksStatus(allEpicSubTasks);
