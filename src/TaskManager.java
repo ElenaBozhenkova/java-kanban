@@ -111,22 +111,13 @@ public class TaskManager {
         return false;
     }
     public Task getTask(int id) {
-        if (tasks.containsKey(id)) {
-            return tasks.get(id);
-        }
-        return null;
+        return tasks.get(id);
     }
     public Task getEpic(int id) {
-        if (epics.containsKey(id)) {
-            return epics.get(id);
-        }
-        return null;
+        return epics.get(id);
     }
     public Task getSubTask(int id) {
-        if (subTasks.containsKey(id)) {
-            return subTasks.get(id);
-        }
-        return null;
+        return subTasks.get(id);
     }
     public Task updateTask(Task updatedTask) {
         Task currentTask = tasks.get(updatedTask.getId());
