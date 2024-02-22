@@ -45,7 +45,7 @@ public class Epic extends Task {
         epicSubTasks.clear();
     }
 
-    public TaskStatus checkSubTasksStatus(ArrayList<SubTask> allEpicSubTasks) {//нужно объединить методы по статусам, чтобы не гонять один и тот же список дважды, а так же дополнить его логикой определения статуса IN_PROGRESS
+    public TaskStatus checkSubTasksStatus(ArrayList<SubTask> allEpicSubTasks) {
         boolean isNew = true;
         boolean isDone = true;
 
