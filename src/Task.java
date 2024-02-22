@@ -17,7 +17,6 @@ public class Task {
         this.taskStatus = taskStatus;
         this.taskType = TaskType.TASK;
     }
-
     public Task(Integer id, String taskName, String taskDescription, TaskStatus taskStatus) {
         this.id = id;
         this.taskName = taskName;
@@ -72,7 +71,6 @@ public class Task {
                 ", taskName='" + taskName + '\'' +
                 ", taskDescription='" + taskDescription + '\'' +
                 ", taskStatus=" + taskStatus +
-                ", taskType=" + taskType +
                 '}';
     }
     @Override
