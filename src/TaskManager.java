@@ -16,7 +16,7 @@ public class TaskManager {
         return ++id;
     }
     public Task addNewTask(Task task) {
-        task.setId(ID.generateId());
+        task.setId(generateId());
         tasks.put(task.getId(),task);
         return task;
     }
