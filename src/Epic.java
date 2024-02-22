@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Epic extends Task {
-    private final ArrayList<SubTask> epicSubTasks;
+    private final ArrayList<Integer> epicSubTasks;
 
     Epic(String taskName, String taskDescription) {
         super(taskName,taskDescription);
@@ -18,13 +18,14 @@ public class Epic extends Task {
         this.taskStatus = taskStatus;
     }
 
-    public ArrayList<SubTask> getEpicSubTasks() {
+    public ArrayList<Integer> getEpicSubTasks() {
         return epicSubTasks;
     }
 
     public void addSubTask(SubTask subTask) {
         epicSubTasks.add(subTask);
     }
+
 
     public boolean checkSubTasksStatusIsDONE() {
         for (SubTask subTask : epicSubTasks) {
