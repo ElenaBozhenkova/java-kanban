@@ -35,6 +35,9 @@ public class Epic extends Task {
         }
         return false;
     }
+    public void removeEpicSubTasks() {
+        epicSubTasks.clear();
+    }
 
 
     public boolean checkSubTasksStatusIsDONE() {
