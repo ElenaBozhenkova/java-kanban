@@ -120,13 +120,8 @@ public class TaskManager {
         return subTasks.get(id);
     }
     public Task updateTask(Task updatedTask) {
-        Task currentTask = tasks.get(updatedTask.getId());
-
-        if (currentTask != null && tasks.containsKey(updatedTask.getId())) {
-            currentTask.setTaskName(updatedTask.getTaskName());
-            currentTask.setTaskDescription(updatedTask.getTaskDescription());
-            currentTask.setTaskStatus(updatedTask.getTaskStatus());
-            tasks.put(updatedTask.getId(),currentTask);
+        if (tasks.containsKey(updatedTask.getId())) {
+            tasks.put(updatedTask.getId(),updatedTask);
             return updatedTask;
         }
         return null;
