@@ -42,15 +42,12 @@ public class TaskManager {
         }
         return listOfAllTasks;
     }
-    public void printAllEpic() {
-        if (epics.isEmpty())
-            System.out.println("Ваш список эпиков пока пустой");
-
-        for (int id : epics.keySet()) {
-            System.out.print("id=" + id + " ");
-            Epic epic = epics.get(id);
-            System.out.println(epic);
+    public ArrayList<Epic>  getAllEpic() {
+        ArrayList<Epic> listOfAllEpics= new ArrayList<>();
+        for (Epic epic : epics.values()) {
+            listOfAllEpics.add(epic);
         }
+        return listOfAllEpics;
     }
     public void printAllSubTasks() {
         if (subTasks.isEmpty())
