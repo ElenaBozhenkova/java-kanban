@@ -67,6 +67,10 @@ public class TaskManager {
     }
     public void removeAllSubTasks() {
         subTasks.clear();
+        for (Epic epic : epics.values()) {
+            epic.removeEpicSubTasks();
+            updateEpicStatus(epic);
+        }
     }
     public Boolean removeTask(int id) {
         if (tasks.containsKey(id)) {
