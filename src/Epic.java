@@ -26,7 +26,7 @@ public class Epic extends Task {
     }
 
     public ArrayList<Integer> getEpicSubTasks() {
-        return epicSubTasks;
+        return new ArrayList<>(epicSubTasks);
     }
 
     public void addSubTask(SubTask subTask) {
