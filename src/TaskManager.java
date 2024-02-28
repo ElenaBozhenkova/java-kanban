@@ -30,7 +30,7 @@ public class TaskManager {
             subTask.setId(generateId());
             subTasks.put(subTask.getId(), subTask);
             Epic epic = epics.get(subTask.getEpicId());
-            epic.addSubTask(subTask);
+            epic.addSubTask(subTask.getId());
             updateEpicStatus(epic);
             return subTask;
         }
