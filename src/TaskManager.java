@@ -86,7 +86,6 @@ public class TaskManager {
             for (Integer subTaskId : epicSubTasks) {
                 subTasks.remove(subTaskId);
             }
-            epic.removeEpicSubTasks();
             epics.remove(id);
             return true;
         }
