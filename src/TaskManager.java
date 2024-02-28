@@ -145,5 +145,4 @@ public class TaskManager {
         ArrayList<SubTask> allEpicSubTasks = getAllEpicSubTasks(epic);
         epic.checkSubTasksStatus(allEpicSubTasks);
     }
-
 }
