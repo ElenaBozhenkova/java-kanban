@@ -32,13 +32,11 @@ public class Epic extends Task {
     public void addSubTask(int id) {
         epicSubTasks.add(id);
     }
-    public void removeEpicSubTasksItem(int id) {
-        for(Integer item : epicSubTasks ) {
-            if (Objects.equals(id, item)) {
-                epicSubTasks.remove(item);
-            }
-        }
+    public void removeEpicSubTasksItem(Integer id) {
+        epicSubTasks.remove(id);
     }
+
+
     public void removeEpicSubTasks() {
         epicSubTasks.clear();
     }
