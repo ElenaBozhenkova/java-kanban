@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class TaskManager {
+public class InMemoryTaskManager {
     protected HashMap<Integer,Task> tasks;
     protected HashMap<Integer,Epic> epics;
     protected HashMap<Integer,SubTask> subTasks;
     private int id = 0;
 
-    public TaskManager() {
+    public InMemoryTaskManager() {
         this.tasks = new HashMap<>();
         this.epics = new HashMap<>();
         this.subTasks = new HashMap<>();
