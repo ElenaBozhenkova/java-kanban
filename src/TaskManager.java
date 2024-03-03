@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public interface TaskManager {
     Task addNewTask(Task task);
@@ -40,4 +41,6 @@ public interface TaskManager {
     Boolean updateEpic(Epic updatedEpic);
 
     Boolean updateSubTask(SubTask updatedSubTask);
+
+    List<Task> getHistory();
 }
