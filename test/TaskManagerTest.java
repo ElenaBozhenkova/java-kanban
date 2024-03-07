@@ -71,7 +71,7 @@ class TaskManagerTest {
         Task newTask = new Task("Задача 2","Описание 2",TaskStatus.NEW);
         taskManager.addNewTask(newTask);
 
-        ArrayList<Task> tasksList = taskManager.getAllTask();
+        List<Task> tasksList = taskManager.getAllTask();
 
         assertEquals(1,tasksList.size(), "Задача не добавлена.");
     }
@@ -91,7 +91,7 @@ class TaskManagerTest {
         Epic newEpic = new Epic("Эпик 4","Описание эпика 4");
         taskManager.addNewEpic(newEpic);
 
-        ArrayList<Epic> epicList = taskManager.getAllEpic();
+        List<Epic> epicList = taskManager.getAllEpic();
 
         assertEquals(1,epicList.size(), "Эпик не добавлен.");
     }
@@ -114,7 +114,7 @@ class TaskManagerTest {
 
         taskManager.addNewSubTask(newSubTask);
 
-        ArrayList<SubTask> subTasksList = taskManager.getAllSubTasks();
+        List<SubTask> subTasksList = taskManager.getAllSubTasks();
 
         assertEquals(1,subTasksList.size(), "Подзадача не добавлена.");
     }

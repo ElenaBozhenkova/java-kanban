@@ -12,13 +12,13 @@ public interface TaskManager {
 
     SubTask addNewSubTask(SubTask subTask);
 
-    ArrayList<Task> getAllTask();
+    List<Task> getAllTask();
 
-    ArrayList<Epic> getAllEpic();
+    List<Epic> getAllEpic();
 
-    ArrayList<SubTask> getAllSubTasks();
+    List<SubTask> getAllSubTasks();
 
-    ArrayList<SubTask> getAllEpicSubTasks(Epic epic);
+    List<SubTask> getAllEpicSubTasks(Epic epic);
 
     void removeAll();
 
