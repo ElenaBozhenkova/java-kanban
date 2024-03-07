@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
+import java.util.List;
 
 class TaskManagerTest {
     private TaskManager taskManager;
@@ -176,5 +177,36 @@ class TaskManagerTest {
         Task[] getHistory = taskManager.getHistory().toArray(new Task[2]);
 
         assertArrayEquals(history,getHistory,"Массивы не равны");
+    }
+    @Test
+    void getHistory_shouldRemoveFirstTaskIfHistoryListMore10() {
+        taskManager.addNewTask(new Task("Задача1","Описание1", TaskStatus.NEW));
+        taskManager.addNewTask(new Task("Задача2","Описание2", TaskStatus.NEW));
+        taskManager.addNewTask(new Task("Задача3","Описание3", TaskStatus.NEW));
+        taskManager.addNewTask(new Task("Задача4","Описание4", TaskStatus.NEW));
+        taskManager.addNewTask(new Task("Задача5","Описание5", TaskStatus.NEW));
+        taskManager.addNewTask(new Task("Задача6","Описание6", TaskStatus.NEW));
+        taskManager.addNewTask(new Task("Задача7","Описание7", TaskStatus.NEW));
+        taskManager.addNewTask(new Task("Задача8","Описание8", TaskStatus.NEW));
+        taskManager.addNewTask(new Task("Задача9","Описание9", TaskStatus.NEW));
+        taskManager.addNewTask(new Task("Задача10","Описание10", TaskStatus.NEW));
+        taskManager.addNewTask(new Task("Задача11","Описание11", TaskStatus.NEW));
+        taskManager.getTask(1);
+        taskManager.getTask(2);
+        taskManager.getTask(3);
+        taskManager.getTask(4);
+        taskManager.getTask(5);
+        taskManager.getTask(6);
+        taskManager.getTask(7);
+        taskManager.getTask(8);
+        taskManager.getTask(9);
+        taskManager.getTask(10);
+        taskManager.getTask(11);
+        List<Task> history = taskManager.getHistory();
+
+        Task expectedTask = new Task(2, "Задача2","Описание2", TaskStatus.NEW);
+        Task task = history.getFirst();
+
+        assertEquals(expectedTask,task, "История работает некорректно");
     }
 }
