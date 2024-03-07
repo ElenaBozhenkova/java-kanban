@@ -1,12 +1,12 @@
+import managers.*;
+import tasks.*;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.BooleanSupplier;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.ArrayList;
 
 class TaskManagerTest {
     private TaskManager taskManager;
@@ -42,7 +42,7 @@ class TaskManagerTest {
     void addNewSubTask_shouldCheckSubTasksEqualsIfEqualsTheirId() {
         Epic epic = new Epic("Эпик 2","Описание эпика 2");
         taskManager.addNewEpic(epic);
-        SubTask subTask = new SubTask("Подзадача 1","Описание подзадачи 1",TaskStatus.NEW, epic.getId());
+        SubTask subTask = new SubTask("Подзадача 1","Описание подзадачи 1", TaskStatus.NEW, epic.getId());
         taskManager.addNewSubTask(subTask);
         final int subTaskId = subTask.getId();
 
