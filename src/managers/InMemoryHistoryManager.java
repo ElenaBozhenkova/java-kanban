@@ -10,13 +10,10 @@ public class InMemoryHistoryManager implements HistoryManager {
     @Override
     public void add(Task task) {
         int memorySize = 10;
-        if (history.size() < memorySize) {
-            history.add(task);
-        }
-        else {
+        if (history.size() >= memorySize) {
             history.removeFirst();
-            history.add(task);
         }
+        history.add(task);
     }
 
     @Override
